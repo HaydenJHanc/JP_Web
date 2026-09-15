@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimized Fullscreen 3x2 Iframe Grid</title>
+    <style>
+        /* Reset margins to prevent scrollbars */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000; /* Dark background to save screen energy */
+            overflow: hidden; /* Prevents scrolling past the viewport */
+        }
+
+        /* Container takes up exactly 100% of the viewport width and height */
+        .iframe-grid {
+            display: grid;
+            /* 3 columns taking up 33.33% of the width each */
+            grid-template-columns: repeat(3, 33.333vw);
+            /* 2 rows taking up 50% of the height each */
+            grid-template-rows: repeat(2, 50vh);
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .iframe-grid iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Removing borders reduces rendering calculations */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="iframe-grid">
+        <!-- Row 1 -->
+        <iframe src="https://example.com" title="Iframe 1" loading="lazy" sandbox="allow-scripts allow-same-origin" fetchpriority="low"></iframe>
+        <iframe src="https://example.com" title="Iframe 2" loading="lazy" sandbox="allow-scripts allow-same-origin" fetchpriority="low"></iframe>
+        <iframe src="https://example.com" title="Iframe 3" loading="lazy" sandbox="allow-scripts allow-same-origin" fetchpriority="low"></iframe>
+        
+        <!-- Row 2 -->
+        <iframe src="https://example.com" title="Iframe 4" loading="lazy" sandbox="allow-scripts allow-same-origin" fetchpriority="low"></iframe>
+        <iframe src="https://example.com" title="Iframe 5" loading="lazy" sandbox="allow-scripts allow-same-origin" fetchpriority="low"></iframe>
+        <iframe src="https://example.com" title="Iframe 6" loading="lazy" sandbox="allow-scripts allow-same-origin" fetchpriority="low"></iframe>
+    </div>
+
+</body>
+</html>
